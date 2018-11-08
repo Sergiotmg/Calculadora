@@ -20,8 +20,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline13"
         app:layout_constraintEnd_toStartOf="@+id/guidelinev3"
         app:layout_constraintStart_toStartOf="@+id/guidelinev2"
-        app:layout_constraintTop_toTopOf="@+id/guideline12"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/guideline12" />
 
     <Button
         android:id="@+id/b2"
@@ -39,8 +38,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guidelinev3"
         app:layout_constraintHorizontal_bias="0.563"
         app:layout_constraintStart_toStartOf="@+id/guidelinev2"
-        app:layout_constraintTop_toTopOf="@+id/guideline13"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/guideline13" />
 
     <Button
         android:id="@+id/b3"
@@ -55,8 +53,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/b2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guidelinev3"
-        app:layout_constraintTop_toTopOf="@+id/b2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/b2" />
 
     <Button
         android:id="@+id/b1"
@@ -181,10 +178,8 @@
         android:text="+"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline4"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
     <Button
         android:id="@+id/bMenos"
@@ -201,8 +196,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline4"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
     <Button
         android:id="@+id/bPor"
@@ -238,8 +232,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline5"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline1"
