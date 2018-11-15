@@ -25,15 +25,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     // inicializamos lo de toolbar
-    Toolbar toolbar;
+    //Toolbar toolbar;
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        toolbar=findViewById(R.id.toolbar);
+        //toolbar=findViewById(R.id.toolbar);
         txtResult=findViewById(R.id.txtResult);
     }
 
-    //creamos unavariable de tipo button y lo igualamos a la vista que nos pasan por ahi pero cvateandola con button
+    //creamos unavariable de tipo button y lo igualamos a la vista que nos pasan por ahi pero casteandola con button
     public void clickButton(View view) {
     Button currentButton = (Button) view;
         result+=currentButton.getText();
@@ -74,8 +75,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_share:
                 Toast.makeText(this,"Click en share",Toast.LENGTH_LONG).show();
                 Intent intent3=new Intent(this,Main5Activity.class);
-                //PARA PASAR EL VALOR AL activity_main5!!! E SCUANDO LE PONEMOS VALORES
-                String nombre="Sergio";
+                //PARA PASAR EL VALOR AL activity_main5!!! ES CUANDO LE PONEMOS VALORES
+
+                String nombre="Sergio";//variable que pasamos a Main5Activity
+
                 //el primer valor es el nombre que le pongo dentro de mi intent
                 intent3.putExtra(USER,nombre);//meterle la variable user con mombre Sergio
                 startActivity(intent3);//lanza actividad pero no va adevoler ningun valor
