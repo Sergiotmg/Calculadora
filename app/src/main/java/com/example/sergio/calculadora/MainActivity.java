@@ -54,13 +54,14 @@ public class MainActivity extends AppCompatActivity {
         //hacerlo con un switch
         //darme el ide de cada item que le pasemos al metodo
         switch (item.getItemId()){
-            case  R.id.action_settings:
+            case  R.id.action_settings://action_devolver
                 Toast.makeText(this,"Click en settings",Toast.LENGTH_LONG).show();
                 Intent intent=new Intent(this,Main3Activity.class);
                         //si no queremos pasar datoa a la 2ª no hace falta intent.puExtra!!!
                 //intent.putExtra("nombre","Nacho");//nombre es el Extramessage
                 //no hay porque cambiarle el nombre en los putExtra, recogerá nombre
-                startActivityForResult(intent,REQUEST_SETTINGS);
+                startActivityForResult(intent,REQUEST_SETTINGS);//request_setting ses el codigo de PETICION
+
             break;
             case  R.id.action_help:
                 Toast.makeText(this,"Click en help",Toast.LENGTH_LONG).show();
@@ -88,15 +89,15 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
+    //METODO APARTE PARA VER LO QUE NOS LLEGA DEL REQUEST(CODIGO DE PETICION) , Y EL CODIGO DE RESULTADO
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         //si vienes desde tal o cual actividades haches tal o cual cosa
         if(requestCode==REQUEST_SETTINGS){
             if (resultCode==RESULT_OK){
-                String nombre=data.getStringExtra(Main3Activity.nombre);//lo habia llamado nombre en la otra
-                //`poner el nobnre en el toolbar
+                String nombre=data.getStringExtra(Main3Activity.REPLY);//lo habia llamado nombre en la otra
+                //`poner el nombre en el toolbar
                 getSupportActionBar().setTitle(nombre);
             }
         }else if (requestCode==REQUEST_HELP){
@@ -105,6 +106,10 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+//    public View getView){
+//
+//    }
 
     private  int plus(int x, int y){
         return x+y;
