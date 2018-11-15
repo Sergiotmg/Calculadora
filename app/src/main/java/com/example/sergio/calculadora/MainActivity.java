@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         //si vienes desde tal o cual actividades haches tal o cual cosa
         if(requestCode==REQUEST_SETTINGS){
             if (resultCode==RESULT_OK){
-
+                String nombre=data.getStringExtra("nombre");
             }
         }else if (requestCode==REQUEST_HELP){
 
