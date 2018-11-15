@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
     TextView txtResult;
@@ -20,11 +21,15 @@ public class MainActivity extends AppCompatActivity {
     public static int REQUEST_HELP=2;
     public static int REQUEST_SHARE=3;
 
+    public static final String USER="user";//para que sea cte es final y static par allamarla desde otra activity
 
-    @Override
+
+    // inicializamos lo de toolbar
+    Toolbar toolbar;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        toolbar=findViewById(R.id.toolbar);
         txtResult=findViewById(R.id.txtResult);
     }
 
@@ -51,25 +56,30 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case  R.id.action_settings:
                 Toast.makeText(this,"Click en settings",Toast.LENGTH_LONG).show();
-                Intent intent=new Intent(this,Main2Activity.class);
+                Intent intent=new Intent(this,Main3Activity.class);
                         //si no queremos pasar datoa a la 2ª no hace falta intent.puExtra!!!
-                intent.putExtra("nombre","Nacho");//nombre es el Extramessage
+                //intent.putExtra("nombre","Nacho");//nombre es el Extramessage
                 //no hay porque cambiarle el nombre en los putExtra, recogerá nombre
                 startActivityForResult(intent,REQUEST_SETTINGS);
             break;
             case  R.id.action_help:
                 Toast.makeText(this,"Click en help",Toast.LENGTH_LONG).show();
-                Intent intent2=new Intent(this,Main2Activity.class);
-                intent2.putExtra("nombre","Nacho");
+                Intent intent2=new Intent(this,Main4Activity.class);
+                //intent2.putExtra("nombre","Nacho");
                 startActivityForResult(intent2,REQUEST_HELP);
                 //IMAGINAROS QUE SI EL USUARIO LOGEA SERIA UN RESULToK
                 // si fuera con un result cancel
             break;
             case R.id.action_share:
                 Toast.makeText(this,"Click en share",Toast.LENGTH_LONG).show();
-                Intent intent3=new Intent(this,Main2Activity.class);
-                intent3.putExtra("nombre","Nacho");
-                startActivityForResult(intent3,REQUEST_SHARE);
+                Intent intent3=new Intent(this,Main5Activity.class);
+                //PARA PASAR EL VALOR AL activity_main5!!! E SCUANDO LE PONEMOS VALORES
+                String nombre="Sergio";
+                //el primer valor es el nombre que le pongo dentro de mi intent
+                intent3.putExtra(USER,nombre);//meterle la variable user con mombre Sergio
+                startActivity(intent3);//lanza actividad pero no va adevoler ningun valor
+
+                //startActivityForResult(intent3,REQUEST_SHARE);
             break;
             default:
                 Toast.makeText(this,"Switch default",Toast.LENGTH_LONG).show();
@@ -85,7 +95,9 @@ public class MainActivity extends AppCompatActivity {
         //si vienes desde tal o cual actividades haches tal o cual cosa
         if(requestCode==REQUEST_SETTINGS){
             if (resultCode==RESULT_OK){
-                String nombre=data.getStringExtra("nombre");
+                String nombre=data.getStringExtra(Main3Activity.nombre);//lo habia llamado nombre en la otra
+                //`poner el nobnre en el toolbar
+                getSupportActionBar().setTitle(nombre);
             }
         }else if (requestCode==REQUEST_HELP){
 
